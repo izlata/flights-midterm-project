@@ -1,0 +1,17 @@
+SELECT * FROM flights LIMIT 20;
+
+SELECT * FROM flights_test LIMIT 10;
+
+SELECT COUNT(*) FROM flights;
+
+SELECT COUNT(*) FROM flights_test;
+
+SELECT AVG(arr_delay) FROM 
+    (SELECT * FROM flights LIMIT 1000) sub;
+
+SELECT COUNT(*) FROM 
+    (SELECT * FROM flights LIMIT 1000) sub
+  WHERE weather_delay IS NOT NULL;
+
+SELECT COUNT(DISTINCT tail_num) FROM 
+    (SELECT * FROM flights LIMIT 1000) sub;
